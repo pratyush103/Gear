@@ -1,6 +1,6 @@
 //Side bar for the chat application
 import React from 'react';
-import {Channellist, useCharContext} from 'stream-chat';
+import {ChannelList, useCharContext} from 'stream-chat';
 import Cookies from 'universal-cookie';
 import{ChannelSearch,TeamChannelList,TeamChannelPreview} from './';
 import HospitalIcon from '../assets/hospital.png'
@@ -34,7 +34,17 @@ const ChannelListContainer =() => {
         <div className="channel-list__list__wrapper">
             <CompanyHeader/>
             <ChannelSearch/>
-
+            <ChannelList
+            filters={{}}
+            channelRenderFilterFn={() => {}}
+            //To make a custom team channel list
+             List={(listProps) =>(
+                <TeamChannelList
+                {...listProps}
+                type="team"
+                />
+             )}
+            />
         </div>
         </>
     );

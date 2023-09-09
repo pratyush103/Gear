@@ -12,7 +12,7 @@ const ChannelSearch =() => {
         try{
             //To fetch channels
            } catch(error){
-            setQuery('')     
+            setQuery('')
         }
     };
 
