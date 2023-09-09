@@ -1,2 +1,5 @@
+//All imports at one place
+
 export {default as ChannelContainer} from './ChannelContainer';
 export {default as ChannelListContainer} from './ChannelListContainer';
+export {default as ChannelSearch} from './ChannelSearch';
