@@ -1,32 +1,39 @@
 //Side bar for the chat application
 import React from 'react';
-import {ChannelList, useCharContext} from 'stream-chat';
+import {ChannelList, useChatContext} from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import{ChannelSearch,TeamChannelList,TeamChannelPreview} from './';
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
 
 //for the side bar icon and name
-const SideBar= () => (
+const SideBar= () => {
+    return(
     <div className="Channel-list__sidebar">
         <div className="Channel-list__sidebar__icon1">
             <div className="icon1__inner">
-                <img src= {HospitalIcon} alt="Hospital" width="30"/>
+                <img src={HospitalIcon} alt='Gear' width='30'/>
             </div>
+        </div>
+        <div className="Channel-list__sidebar__icon2">
+            <div className="icon2__inner">
+                <img src={LogoutIcon} alt='Gear' width='30'/>
             </div>
-            <div className="Channel-list__sidebar__icon2">
-            <div className="icon1__inner">
-                <img src= {LogoutIcon} alt="Logout" width="30"/>
-            </div>
-            </div>
-    </div>
-);
-const CompanyHeader =() =>{
-    <div className="channel-list__header">
-        <p className="channel-list__header__text">YOU TITLE GOES HERE</p>
+        
+        </div>
+        </div>
+        )
 
-    </div>
-} 
+}
+
+const CompanyHeader = () => {
+    return (
+      <div className="channel-list__header">
+        <p className="channel-list__header__text">Gear</p>
+      </div>
+    );
+  }
+   
 const ChannelListContainer =() => {
     return (
         <>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { AddChannel } from '../assets/';
 
-const TeamChannelList = (children,error= false,loading,type) => {
+const TeamChannelList = ({children,error= false,loading,type}) => {
   if (error){ 
   return type ==="team" ? (
     <div className="team-channel-list">
@@ -15,7 +15,7 @@ const TeamChannelList = (children,error= false,loading,type) => {
   if (loading){
     return (
         <div className="team-channel-list">
-            <p className="team-channel__message loading">
+            <p className="team-channel-list__message loading">
  //opening a dynamic block
  { type === 'team' ?'Channels' : 'Messages' } Loading...
             </p>
