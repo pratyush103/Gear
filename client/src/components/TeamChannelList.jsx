@@ -2,11 +2,13 @@ import React from 'react'
 
 import { AddChannel } from '../assets/';
 
+//opening a dynamic block
+
 const TeamChannelList = ({children,error= false,loading,type}) => {
   if (error){ 
   return type ==="team" ? (
     <div className="team-channel-list">
-        <p className="team-channel__message">
+        <p className="team-channel-list__message">
             Connection Error,please wait a moment and try again.
         </p>
     </div>
@@ -16,7 +18,7 @@ const TeamChannelList = ({children,error= false,loading,type}) => {
     return (
         <div className="team-channel-list">
             <p className="team-channel-list__message loading">
- //opening a dynamic block
+              
  { type === 'team' ?'Channels' : 'Messages' } Loading...
             </p>
         </div>
