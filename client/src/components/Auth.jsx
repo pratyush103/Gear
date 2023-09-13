@@ -3,7 +3,10 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 
 //Images
-import signinImage from '../assets/signup.jpg' 
+import signinImage from '../assets/signup.jpg'
+
+
+const cookies = new Cookies()
 
 const initialState = {
     fullName: '',
@@ -26,17 +29,42 @@ const Auth = () => {
     
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
        e.preventDefault() //Prevent the page from refreshing 
-       console.log(form)
+       const {fullName, username, password, confirmPassword, phoneNumber, avatarURL} = form //Destructure the form values
+
+       const URL = 'http://localhost:5000/auth'
+
+       const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
+        username, password, fullName, phoneNumber, avatarURL,
+       }) //Make a post request to the server with the form values and passing all its data destructured
+
+       //Setting up user info in cookies
+
+       cookies.set('token',token)  
+       cookies.set('username',username)
+       cookies.set('fullName',fullName)
+       cookies.set('userId',userId)
+
+       if (isSignup) {
+        cookies.set('phoneNumber',phoneNumber)
+        cookies.set('avatarURL',avatarURL)
+        cookies.set('hashedPassword',hashedPassword)
        
+       }
+       window.location.reload() //Reload the page
+    
     }
+
+    
+       
+    
 
     //toggle between Signup and Signin
     const switchMode = () =>{
         setIsSignup((prevIsSignup) => !prevIsSignup)
     }
-
+ // MAIN form from where we will take the data from the user and send it to the handleSubmit() function
   return (
     <div className='auth__form-container'>
       <div className="auth__form-container_fields">
