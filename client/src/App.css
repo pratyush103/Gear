@@ -207,6 +207,11 @@ body {
   height: 100%;
 }
 
+/* Custom CSS Here Pratyush*/
+.str-chat__channel-list {  
+  background: var(--primary-color);
+}
+
 .str-chat__load-more-button {
   display: none;
 }
@@ -370,7 +375,7 @@ body {
   box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-.Channel-list__sidebar {
+.channel-list__sidebar {
   width: 72px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     var(--primary-color);
@@ -379,7 +384,7 @@ body {
   /* border-bottom-left-radius: 16px; */
 }
 
-.Channel-list__sidebar__icon1 {
+.channel-list__sidebar__icon1 {
   width: 44px;
   height: 44px;
   margin: 14px;
@@ -408,7 +413,7 @@ body {
   justify-content: center;
 }
 
-.Channel-list__sidebar__icon2 {
+.channel-list__sidebar__icon2 {
   width: 44px;
   height: 44px;
   margin: 14px;
