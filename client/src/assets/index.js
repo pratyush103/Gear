@@ -4,3 +4,6 @@ export { CloseCreateChannel } from './CloseCreateChannel';
 export { InviteIcon } from './InviteIcon';
 export { LightningBolt } from './LightningBolt';
 export { SearchIcon } from './SearchIcon';
+
+export { PinIcon } from './PinIcon';
+
