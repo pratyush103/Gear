@@ -16,4 +16,6 @@ export { default as TeamMessage } from './TeamMessagejs';
 export { default as PinIndicator } from './PinIndicator';
 export { default as WorkspaceController } from './WorkspaceController';
 
+export { default as UserList } from './UserList';
+
 
