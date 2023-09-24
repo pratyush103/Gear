@@ -8,7 +8,23 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  animation: fadeIn 0.25s ease-in-out;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.str-chat__container{
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+
 
 #root {
   height: 100%;
@@ -398,11 +414,37 @@ body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
 }
 
+@keyframes expandFromLeft {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    width: 100%; /* Adjust the final width as needed */
+  }
+}
+@keyframes expandFromLeft240 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    width: 240px; /* Adjust the final width as needed */
+  }
+}
+
 .channel-list__list__wrapper {
   display: flex;
   flex-direction: column;
   background: var(--primary-color);
   width: 240px;
+  animation: expandFromLeft240 0.5s ease-in-out;
 }
 
 .icon1__inner {
@@ -583,6 +625,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  animation: expandFromLeft 0.5s ease;
 }
 
 .create-channel__header {
