@@ -78,15 +78,22 @@ const Auth = () => {
   };
 
   const switchMode = () => {
-    setIsSignup((prevIsSignup) => !prevIsSignup);
+    
+        setTimeout(() => {
+          setIsSignup((prevIsSignup) => !prevIsSignup);
+        }, 2000); // Adjust the delay time (in milliseconds) as needed.
+      
+      
     console.log(isSignup);
 
     const wrapper = document.querySelector(".wrapper");
     if(isSignup){
         wrapper.classList.remove("active");
+
     }
     else{
         wrapper.classList.add("active");
+        
     }
 
   };
@@ -147,7 +154,7 @@ const Auth = () => {
         </div>
 
         {isSignup && (
-          <div className="form-box register">
+          <div className="form-box register animation">
             <h2 className="animation" style={{ '--i': 17, '--j': 0 }}>
               <br />
               <br />

@@ -15,9 +15,17 @@ const ListContainer = ({ children }) => {
     )
 }
 
-const UserItem =({ user }) =>{
+const UserItem =({ user,setSelectedUsers }) =>{
     const [selected, setSelected] = useState(false)
     const handleSelect = () => {
+        if(selected){
+            setSelectedUsers((prevSelectedUsers) => prevSelectedUsers.filter((prevUser) => prevUser !== user.id))
+        
+        }
+        else{
+            setSelectedUsers((prevSelectedUsers) => [...prevSelectedUsers, user.id])
+        }
+
         setSelected((prevSelected) => !prevSelected) //toggle between if selected or not
     }
     return(
@@ -36,12 +44,15 @@ const UserItem =({ user }) =>{
 }
 // id: {$ne: client.userID}  is fetching all users except the current user
 // limits users fetched to 8
-const UserList = () => {
+const UserList = ({ setSelectedUsers }) => {
     const { client }= useChatContext();
     
     const [users,setUsers] = useState([]);
     const [loading, setLoading] = useState(false)
     const [listEmpty, setListEmpty] = useState(false)
+
+    //error handling
+    const [error, setError] = useState(false);
     
     useEffect(() => {
       const getUsers = async () => {
@@ -64,6 +75,7 @@ const UserList = () => {
             
         } catch (error) {
             console.log(error);
+            setError(true);
         
             
         }
@@ -71,6 +83,26 @@ const UserList = () => {
       }
       if(client) getUsers()
     }, [])
+
+    if(error){
+        return (
+            <ListContainer>
+            <div className="user-list__message">
+                Connection Error,please wait a moment and try again.
+            </div>
+            </ListContainer>
+        )
+    }
+
+    if(listEmpty){
+        return (
+            <ListContainer>
+            <div className="user-list__message">
+                No Users to show Here
+            </div>
+            </ListContainer>
+        )
+    }
     
   return (
     <ListContainer>
@@ -78,7 +110,7 @@ const UserList = () => {
             Loading Users...
         </div> : ( 
             users ?.map((user, i)=>(
-            <UserItem index={i} key={user.id} user={user} />))
+            <UserItem index={i} key={user.id} user={user} setSelectedUsers={setSelectedUsers}/>))
         )}
     </ListContainer>
     

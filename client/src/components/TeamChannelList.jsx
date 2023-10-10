@@ -4,7 +4,7 @@ import { AddChannel } from '../assets/';
 
 //opening a dynamic block
 
-const TeamChannelList = ({children,error= false,loading,type,isCreating,setIsCreating,setCreateType, setIsEditing}) => {
+const TeamChannelList = ({children,error= false,loading,type,isCreating,setIsCreating,setCreateType, setIsEditing, setToggleContainer}) => {
   if (error){ 
   return type ==="team" ? (
     <div className="team-channel-list">
@@ -38,7 +38,8 @@ return (
               setIsCreating={setIsCreating}
               setCreateType={setCreateType}
               setIsEditing={setIsEditing}
-              type={type==='team' ? 'team' :'messaging'}            
+              type={type==='team' ? 'team' :'messaging'}
+              setToggleContainer={setToggleContainer}            
            />
         </div>
         {children}
