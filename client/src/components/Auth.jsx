@@ -25,12 +25,51 @@ const Auth = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+
+
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
-    const { username, password, phoneNumber, avatarURL } = form;
+    const { username, password, confirmPassword, phoneNumber, avatarURL } = form;
+
+    // Check if the password and confirm password match.
+  if (password !== confirmPassword) {
+    // Passwords don't match, display an error message or perform the desired action.
+    document.querySelector('.errsignin').innerHTML = "Passwords do not match.";
+    document.querySelector('.errsignin').style.display = 'block';
+    setTimeout(() => {
+      document.querySelector('.errsignin').style.display = 'none';
+    }, 3000);
+    return; // Exit the function.
+  }
+
+  // Check if the password is at least 8 characters long and contains both alphabets and numbers.
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  if (!password.match(passwordRegex)) {
+    // Invalid password, display an error message or perform the desired action.
+    document.querySelector('.errsignin').innerHTML = "Password must be at least 8 characters long and contain both letters and numbers.";
+    document.querySelector('.errsignin').style.display = 'block';
+    setTimeout(() => {
+      document.querySelector('.errsignin').style.display = 'none';
+    }, 3000);
+    return; // Exit the function.
+  }
+
+  // Check if the phone number is at least 10 characters long.
+  if (phoneNumber.length < 10) {
+    // Invalid phone number, display an error message or perform the desired action.
+    document.querySelector('.errsignin').innerHTML = "Phone number must be at least 10 characters long.";
+    document.querySelector('.errsignin').style.display = 'block';
+    setTimeout(() => {
+      document.querySelector('.errsignin').style.display = 'none';
+    }, 3000);
+    return; // Exit the function.
+  }
+
 
     const URL = 'http://localhost:5000/auth';
+
+    
 
     try {
       const response = await axios.post(`${URL}/signup`, {
@@ -54,6 +93,12 @@ const Auth = () => {
       window.location.reload();
     } catch (error) {
       console.error(error);
+
+      document.querySelector('.errsignin').innerHTML=`${error}`;
+      document.querySelector('.errsignin').style.display = 'block';
+      setTimeout(() =>{
+        document.querySelector('.errsignin').style.display = 'none';
+      },3000)
     }
   };
 
@@ -80,6 +125,11 @@ const Auth = () => {
       window.location.reload();
     } catch (error) {
       console.error(error);
+      document.querySelector('.errlog').style.display = 'block';
+      setTimeout(() =>{
+        document.querySelector('.errlog').style.display = 'none';
+      },3000)
+      
     }
   };
 
@@ -108,6 +158,7 @@ const Auth = () => {
           <h2 className="animation" style={{ '--i': 0, '--j': 21 }}>
             Login
           </h2>
+          <div className="errlog">Incorrect Username or Password</div>
           <form onSubmit={handleLoginSubmit}>
             <div className="input-box animation" style={{ '--i': 1, '--j': 22 }}>
               <input
@@ -165,6 +216,7 @@ const Auth = () => {
               <br />
               <br />
               Sign Up
+              <div className="errsignin"></div>
             </h2>
             <form onSubmit={handleSignupSubmit}>
               <div className="input-box animation" style={{ '--i': 18, '--j': 1 }}>
@@ -222,14 +274,14 @@ const Auth = () => {
           <h1 className="animation" style={{ '--i': 17, '--j': 0 }}>
             Welcome to Gear!
           </h1>
-          <img
+          {/*<img
             src={spinningGear}
             className="gear-spinning animation"
             style={{ '--i': 17, '--j': 0 }}
             width="50"
             height="50"
             alt="sign in"
-          />
+        />*/}
           <p className="animation" style={{ '--i': 18, '--j': 1 }}>
             Lorem ipsum dolor sit amet consectetur adipisicing.
           </p>

@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #005fff;
+  --primary-color: #191919;
   --primary-color-alpha: #005fff1a;
 }
 
@@ -464,12 +464,44 @@ body {
       rgba(0, 0, 0, 0.1) 12.73%,
       rgba(0, 0, 0, 0) 89.32%
     ),
-    #ffffff;
-  border-radius: 9999px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    #141414;
+  border-radius: 50%;
+  
+  box-shadow: none;
+    transition: box-shadow .25s ease-in-out;
+  
   cursor: pointer;
 }
 
+
+.channel-list__sidebar__icon2:hover{
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.595);
+  border: 2px solid rgba(255, 255, 255, 0.595);
+    transition: border .5 ease-in-out;
+    transition: box-shadow .45s ease-in-out;    
+    
+    
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0px 0px 20px rgba(224, 223, 223, 0.482);
+  }
+  50% {
+      box-shadow: 0px 0px 15px rgba(224, 223, 223, 0.482);
+  }
+  100% {
+      box-shadow: 0px 0px 20px rgba(224, 223, 223, 0.482);
+  }
+}
+
+.crossbtn{
+  transform: rotate(0deg);
+    transition: transform .25s ease-in-out;
+}
+.crossbtn:hover{
+  transform: rotate(180deg);
+}
 
 .icon2__inner {
   font-family: Helvetica Neue, sans-serif;
@@ -485,13 +517,52 @@ body {
 }
 
 .channel-list__header__text {
+  
   font-family: Helvetica Neue, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  padding-top: 30px;
+  font-size: 35px;
   line-height: 28px;
   color: #ffffff;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.channel-list__header ul {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:70px;
+}
+.channel-list__header .channel-list__header__ul .channel-list__header__li {
+  list-style:none;
+  position:relative;
+}
+.channel-list__header .channel-list__header__ul .channel-list__header__li .channel-list__header__a {
+    font-family:"Poppins", sans-serif;
+  position:relative;
+  text-decoration:none;
+  font-size:1.5em;
+  line-height:1.5em;
+  letter-spacing:2px;
+  color:transparent;
+  -webkit-text-stroke:1px var(--clr);
+}
+.channel-list__header .channel-list__header__ul .channel-list__header__li .channel-list__header__a::before {
+  content:attr(data-text);
+  position:absolute;
+  color:var(--clr);
+  width:0px;
+  overflow:hidden;
+  transition:1s;
+
+  border-right:8px solid var(--clr);
+}
+.channel-list__header .channel-list__header__ul .channel-list__header__li .channel-list__header__a:hover::before {
+  width:100%;
+  filter:drop-shadow(7px -12px 35px var(--clr));
+}
+
 
 .channel-search__container {
   position: relative;
@@ -511,7 +582,15 @@ body {
   border-radius: 8px;
   margin-bottom: 8px;
   border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
   width: 95%;
+}
+
+.channel-search__input__wrapper:hover {
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-left-color: transparent;
 }
 
 .channel-search__input__wrapper:focus-within {
@@ -710,6 +789,13 @@ body {
   color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.create-channel__button-wrapper p:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: #f6ff00;
 }
 
 .user-list__container {
@@ -874,7 +960,10 @@ body {
   align-items: center;
   justify-content: flex-end;
   border-bottom-right-radius: 16px;
+  
 }
+
+
 
 .edit-channel__button-wrapper p {
   background: var(--primary-color);
@@ -886,6 +975,12 @@ body {
   margin-right: 30px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.edit-channel__button-wrapper:hover p{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .team-channel-header__container {
@@ -895,7 +990,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background: #ffffff;
+  background: #141414;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   border-top-right-radius: 16px;
   z-index: 1;
@@ -908,13 +1003,24 @@ body {
 
 .team-channel-header__channel-wrapper svg {
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
 }
+
+.team-channel-header__channel-wrapper svg:hover {
+  transform: scale(1.1);
+}
+
+.team-channel-header__channel-wrapper path{
+  fill:white;
+}
+
 
 .team-channel-header__name {
   font-family: Helvetica Neue, sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: #2c2c30;
+  color: #ffffff;
   margin-right: 8px;
 }
 
@@ -1022,10 +1128,11 @@ body {
   height: 37px;
   display: flex;
   align-items: center;
+  transition: box-shadow .25s ease-in-out;
 }
 
 .channel-preview__wrapper__selected {
-  height: auto;
+  height: 37px;
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
@@ -1035,6 +1142,10 @@ body {
   margin-right: 16px;
   cursor: pointer;
   z-index: 2;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.595);
+  margin-top: 2px;
+  margin-bottom: 2px;
+  
 }
 
 .channel-preview__wrapper:hover {
@@ -1044,6 +1155,7 @@ body {
   font-weight: bold;
   margin-right: 16px;
   cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.595);
 }
 
 .channel-preview__item {
@@ -1057,7 +1169,10 @@ body {
   width: 100%;
   text-overflow: ellipsis;
   word-break: break-all;
+  
 }
+
+
 
 .channel-preview__item.multi {
   max-width: 220px;
@@ -1091,7 +1206,22 @@ body {
 }
 
 .str-chat__message-team:hover {
-  background: #e9e9ea;
+  background: #545454;
+}
+
+.str-chat__message-team {
+  font-family: var(--second-font);
+  
+  position: relative;
+  display: flex;
+  padding: 5px 40px;
+  background-color: #343434;
+}
+
+.str-chat__message--me.str-chat__message--deleted, .str-chat__message-simple--me.str-chat__message--deleted {
+  margin: 0 var(--xl-m) 0 0;
+  align-items: flex-end;
+  background-color: #343434;
 }
 
 .str-chat__message-team-group {
@@ -1105,7 +1235,7 @@ body {
   font-style: normal;
   font-weight: normal;
   line-height: 120%;
-  color: #000000;
+  color:white;
   margin: 0;
   background: none;
 }
@@ -1165,7 +1295,7 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  color: var(--primary-color);
+  color: white;
 }
 
 .str-chat__message-replies-count-button:focus {

@@ -6,7 +6,7 @@ import{ChannelSearch,TeamChannelList,TeamChannelPreview} from './';
 
 //Images
 import HospitalIcon from '../assets/hospital.png'
-import LogoutIcon from '../assets/logout.png'
+import LogoutIcon from '../assets/logoutico.png'
 
 const cookies = new Cookies();
 
@@ -32,9 +32,16 @@ const SideBar= ({logout}) => {
 
 const CompanyHeader = () => {
     return (
-      <div className="channel-list__header">
-        <p className="channel-list__header__text">Gear</p>
-      </div>
+        <div className="channel-list__header">
+  <ul className="channel-list__header__ul">
+    <li className="channel-list__header__li" style={{'--clr': '#04d9ff'}}>
+      <h2>
+        <a href="#" className="channel-list__header__a" data-text=" Gear">
+           Gear </a></h2>
+    </li>
+    </ul>
+    </div>
+
     );
   }
 
