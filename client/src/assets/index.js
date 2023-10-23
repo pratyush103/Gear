@@ -6,4 +6,4 @@ export { LightningBolt } from './LightningBolt';
 export { SearchIcon } from './SearchIcon';
 
 export { PinIcon } from './PinIcon';
-
+export { logoMain } from './logoMain';
