@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stream-io/video-react-sdk": "^0.3.46",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,8 +11,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "stream-chat": "^8.11.0",
-    "stream-chat-react": "^10.9.1",
+    "sass": "^1.69.4",
+    "stream-chat": "^8.13.1",
+    "stream-chat-react": "^10.15.0",
     "universal-cookie": "^6.1.0",
     "web-vitals": "^2.1.4"
   },

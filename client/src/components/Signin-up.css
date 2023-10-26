@@ -9,14 +9,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  --primary: #0ef;
+  --primary: #00ff1d;
 }
 .auth__form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #081b29;
+  background: #0c1e0e;
 }
 
 .wrapper {
@@ -305,7 +305,7 @@
   left: 250px;
   width: 850px;
   height: 700px;
-  background: #081b29;
+  background: #0c1e0e;
   border-top: 3px solid var(--primary);
   transform: rotate(0) skewY(0);
   transform-origin: bottom left;
