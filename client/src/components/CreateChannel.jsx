@@ -49,7 +49,8 @@ const CreateChannel = ({createType,setIsCreating}) => {
       setIsCreating(false)
       setSelectedUsers([client.userID])
       setActiveChannel(newChannel)
-      
+      const audio = new Audio('https://cdn.whyp.it/10b1aa19-62b1-4f20-bac8-844badc5c03a.mp3');
+      audio.play();
       
     } catch (error) {
       console.log(error);

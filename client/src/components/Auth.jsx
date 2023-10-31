@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
-import signinImage from '../assets/signup.jpg';
-import spinningGear from '../assets/spinning_gear.gif';
+
 import './Signin-up.css';
 
 const cookies = new Cookies();
@@ -42,7 +41,7 @@ const Auth = () => {
     }, 3000);
     return; // Exit the function.
   }
-
+  /*
   // Check if the password is at least 8 characters long and contains both alphabets and numbers.
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!password.match(passwordRegex)) {
@@ -53,7 +52,7 @@ const Auth = () => {
       document.querySelector('.errsignin').style.display = 'none';
     }, 3000);
     return; // Exit the function.
-  }
+  }*/
 
   // Check if the phone number is at least 10 characters long.
   if (phoneNumber.length < 10) {
@@ -67,7 +66,7 @@ const Auth = () => {
   }
 
 
-    const URL = 'http://localhost:5000/auth';
+    const URL = 'https://nexus-v1.onrender.com/auth';
 
     
 
@@ -107,7 +106,7 @@ const Auth = () => {
 
     const { username, password } = form;
 
-    const URL = 'http://localhost:5000/auth';
+    const URL = 'https://nexus-v1.onrender.com/auth';
 
     try {
       const response = await axios.post(`${URL}/login`, {

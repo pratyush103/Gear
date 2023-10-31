@@ -3,6 +3,7 @@ import { MessageList, MessageInput, Thread, Window, useChannelActionContext, Ava
 
 import { ChannelInfo } from '../assets';
 
+
 export const GiphyContext = React.createContext({});
 
 const ChannelInner = ({ setIsEditing }) => {
@@ -61,7 +62,9 @@ const TeamChannelHeader = ({ setIsEditing }) => {
             ))}
   
             {additionalMembers > 0 && <p className='team-channel-header__name user'>and {additionalMembers} more</p>}
+            
           </div>
+          
         );
       }
   

@@ -399,6 +399,15 @@ body {
   /* border-top-left-radius: 16px; */
   /* border-bottom-left-radius: 16px; */
 }
+.channel-list__sidebar__icon1__a path {
+  fill: #000;
+  transition: all .5s ease-in-out;
+}
+
+.channel-list__sidebar__icon1__a:hover path {
+  fill: #39ff14;
+  filter: drop-shadow(0px 0px 50px #39ff14);
+}
 
 .channel-list__sidebar__icon1 {
   width: 44px;
@@ -555,8 +564,6 @@ body {
   width:0px;
   overflow:hidden;
   transition:1s;
-
-  border-right:8px solid var(--clr);
 }
 .channel-list__header .channel-list__header__ul .channel-list__header__li .channel-list__header__a:hover::before {
   width:100%;
@@ -890,6 +897,23 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  animation: expandFromLeft 0.5s ease;
+}
+
+.unpinned-message {
+  background: #343434 !important;
+}
+
+.pinned-message {
+  background: #565656aa !important;
+}
+.str-chat__message-team-pin-indicator{
+  background-color: #ababab4d;
+  border-bottom: 0.5px solid rgba(172, 172, 169, 0.496) !important;
+}
+
+.str-chat__message--deleted-inner{
+  background-color: #1f1f1f !important;
 }
 
 .edit-channel__header {
@@ -1465,6 +1489,7 @@ ul.str-chat__simple-reactions-list:hover {
 
 .pinned-message {
   background: #e6efff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .unpinned-message {
@@ -1479,7 +1504,7 @@ ul.str-chat__simple-reactions-list:hover {
 }
 
 .str-chat__message-team-pin-indicator div svg {
-  fill: #858688;
+  fill: white;
   font-size: 10px !important;
 }
 
