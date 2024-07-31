@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Gear/static/css/main.e029a8eb.css",
+    "main.js": "/Gear/static/js/main.7775f1a2.js",
+    "static/js/141.11ea37e2.chunk.js": "/Gear/static/js/141.11ea37e2.chunk.js",
+    "static/js/209.b9141f0c.chunk.js": "/Gear/static/js/209.b9141f0c.chunk.js",
+    "static/js/878.88882e4a.chunk.js": "/Gear/static/js/878.88882e4a.chunk.js",
+    "static/js/829.4f5d64ff.chunk.js": "/Gear/static/js/829.4f5d64ff.chunk.js",
+    "static/media/EmojiOneColor.woff2": "/Gear/static/media/EmojiOneColor.90ee5fb894c8d349bc54.woff2",
+    "static/media/NotoColorEmoji-flags.woff2": "/Gear/static/media/NotoColorEmoji-flags.148141acfb7ce6e4f383.woff2",
+    "static/media/notification.mp3": "/Gear/static/media/notification.35b2f9f42107e2fee0a9.mp3",
+    "index.html": "/Gear/index.html",
+    "main.e029a8eb.css.map": "/Gear/static/css/main.e029a8eb.css.map",
+    "main.7775f1a2.js.map": "/Gear/static/js/main.7775f1a2.js.map",
+    "141.11ea37e2.chunk.js.map": "/Gear/static/js/141.11ea37e2.chunk.js.map",
+    "209.b9141f0c.chunk.js.map": "/Gear/static/js/209.b9141f0c.chunk.js.map",
+    "878.88882e4a.chunk.js.map": "/Gear/static/js/878.88882e4a.chunk.js.map",
+    "829.4f5d64ff.chunk.js.map": "/Gear/static/js/829.4f5d64ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e029a8eb.css",
+    "static/js/main.7775f1a2.js"
+  ]
+}
