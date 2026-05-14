@@ -24,6 +24,19 @@ app.get('/', (req, res) => {
 
 });
 
+const api_key = process.env.STREAM_API_KEY
+const api_secret = process.env.STREAM_API_SECRET
+const app_id = process.env.STREAM_APP_ID
+
+const streamChat = require('stream-chat').StreamChat;
+
+const client = streamChat.getInstance(api_key, api_secret);
+
+client.on('user.presence.changed', event => {
+    console.log(event.user.id, event.user.online);
+  });
+  
+
 app.post('/', (req, res) => {
     const { message, user: sender, type, members } = req.body
 
